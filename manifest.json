@@ -1,0 +1,27 @@
+{
+   "background": {
+      "page": "main.html"
+	  
+   },
+   "browser_action": {
+      "default_icon": "icon/icon64.png",
+	  "default_popup": "instruction.html",
+      "default_title": "我可是超级会员"
+   },
+   "description": "屏蔽广告+看VIP视频",
+   "icons": {
+      "128": "icon/icon128.png"
+   },
+   
+   "manifest_version": 2,
+   "minimum_chrome_version": "38.0.2121.3",
+   "name": "cj会员",
+   "permissions": [ "storage", "unlimitedStorage", "browsingData", "proxy", "tabs", "webRequest", "webRequestBlocking", "\u003Call_urls>", "http://*/*", "https://*/*" ,"background", "contextMenus"],
+   "version": "0.1.1",
+   "content_scripts": [
+    {
+      "matches": ["http://*/","https://*/","http://*/*","https://*/*","http://www.jc88.net/*","http://v.72du.com/api/*"],
+      "js": ["js/jquery-1.10.1.min.js", "js/my-del-ad-script.js"]
+    }
+  ]
+}
